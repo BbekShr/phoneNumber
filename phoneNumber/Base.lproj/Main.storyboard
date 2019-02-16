@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,56 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="phoneNumber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhM-E0-jKo">
+                                <rect key="frame" x="170.5" y="318.5" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xws-HD-RJm"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter phone number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Yi-Kw-5qX">
+                                <rect key="frame" x="90" y="250" width="195" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ener your name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lov-cF-B3x">
+                                <rect key="frame" x="90" y="188" width="195" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.49141300243776243" green="0.98094186344643119" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GhM-E0-jKo" firstAttribute="top" secondItem="1Yi-Kw-5qX" secondAttribute="bottom" constant="38.5" id="2Nd-XR-4nS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lov-cF-B3x" secondAttribute="trailing" constant="90" id="DMZ-rT-SsC"/>
+                            <constraint firstItem="1Yi-Kw-5qX" firstAttribute="centerX" secondItem="GhM-E0-jKo" secondAttribute="centerX" id="JNp-4X-LgI"/>
+                            <constraint firstItem="1Yi-Kw-5qX" firstAttribute="trailing" secondItem="lov-cF-B3x" secondAttribute="trailing" id="RUg-Ca-Jze"/>
+                            <constraint firstItem="GhM-E0-jKo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jxH-4u-bbv"/>
+                            <constraint firstItem="lov-cF-B3x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="lyU-Ir-uSt"/>
+                            <constraint firstItem="GhM-E0-jKo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mGs-ha-FbW"/>
+                            <constraint firstItem="1Yi-Kw-5qX" firstAttribute="top" secondItem="lov-cF-B3x" secondAttribute="bottom" constant="32" id="tvd-nt-i7f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Yi-Kw-5qX" secondAttribute="trailing" constant="90" id="vl3-bX-q6N"/>
+                            <constraint firstItem="1Yi-Kw-5qX" firstAttribute="leading" secondItem="lov-cF-B3x" secondAttribute="leading" id="wcd-if-aeo"/>
+                            <constraint firstItem="1Yi-Kw-5qX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="zyM-5A-qZx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="lov-cF-B3x" id="Myz-F9-vOY"/>
+                        <outlet property="numberTextField" destination="1Yi-Kw-5qX" id="1c2-jf-S2T"/>
+                        <outlet property="saveButtonTextView" destination="GhM-E0-jKo" id="chc-PN-wWJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="128.18590704647679"/>
         </scene>
     </scenes>
 </document>
